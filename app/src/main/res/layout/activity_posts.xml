@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <LinearLayout
+      android:id="@+id/ll_container_post"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="10dp"
+      android:orientation="vertical"
+      >
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Post Title"
+        style="@style/TitleText"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        >
+      <ImageView
+          android:id="@+id/iv_author"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:src="@drawable/ic_author"
+          />
+
+      <TextView
+          android:id="@+id/tv_author_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_toRightOf="@+id/iv_author"
+          android:gravity="center_vertical"
+          tools:text="Author name"
+          style="@style/TitleText"
+          />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_post_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        tools:text="27/05/2017"
+        />
+
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+      <TextView
+          android:id="@+id/tv_post_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="Hi I am Ashish"
+          style="@style/Body1Text"
+          />
+    </ScrollView>
+
+  </LinearLayout>
+
+</ScrollView>

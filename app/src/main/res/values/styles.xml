@@ -1,0 +1,59 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+  <!--My Custom ActionBar-->
+  <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+    <item name="android:background">@color/colorPrimary</item>
+    <item name="background">@color/colorPrimary</item>
+    <item name="android:textColor">@color/colorWhite</item>
+    <item name="android:titleTextStyle">@style/TitleText</item>
+    <item name="android:textColorSecondary">@color/colorWhite</item>
+  </style>
+
+
+  <style name="HeadlineText">
+    <item name="android:textSize">@dimen/headline</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+  </style>
+
+  <style name="TitleText">
+    <item name="android:textSize">@dimen/title</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+  </style>
+
+  <style name="NormalTitleText">
+    <item name="android:textSize">@dimen/title</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+  </style>
+
+  <style name="Body1Text">
+    <item name="android:textSize">@dimen/body</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+  </style>
+
+  <style name="ButtonText">
+    <item name="android:textSize">@dimen/button</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textColor">@color/colorWhite</item>
+  </style>
+
+
+  <color name="color_background_color">#F1F1F1</color>
+  <color name="primaryTextColor">#000000</color>
+  <color name="colorWhite">#FFFFFF</color>
+  <dimen name="headline">20sp</dimen>
+  <dimen name="title">15sp</dimen>
+  <dimen name="secondaryTitle">14sp</dimen>
+  <dimen name="button">14sp</dimen>
+  <dimen name="body">14sp</dimen>
+</resources>
