@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TopPostsPresenter {
-    private static final int NUMBER_OF_PAGE_ELEMENTS = 20;
+    private static final int NUMBER_OF_PAGE_ELEMENTS = 1000;
     private ITopPostsView view;
     private final DatabaseReference databaseChildReference;
     private static final String TAG = "##TopPostsPresenter##";
@@ -37,7 +37,7 @@ public class TopPostsPresenter {
             view.showMessage(StringUtils.getString(R.string.no_internet_connection));
         } else {
             view.showProgress(true);
-            databaseChildReference.orderByChild("id")
+            databaseChildReference.orderByChild("timestamp")
                 .limitToFirst(NUMBER_OF_PAGE_ELEMENTS)
                 .startAt(nextIdValue)
                 .addValueEventListener(new ValueEventListener() {

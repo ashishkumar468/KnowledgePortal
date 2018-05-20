@@ -5,6 +5,8 @@
     android:orientation="vertical"
     >
 
+  <include layout="@layout/toolbar"/>
+
   <FrameLayout
       android:id="@+id/fl_top_posts"
       android:layout_width="match_parent"

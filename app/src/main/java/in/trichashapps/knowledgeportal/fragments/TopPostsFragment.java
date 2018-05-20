@@ -30,7 +30,7 @@ public class TopPostsFragment extends BaseFragment implements ITopPostsView {
     private TopPostsAdapter adapter;
     long nextIdValue = Long.MIN_VALUE;
     private boolean shouldFetchMore = true;
-    private int PAGE_SIZE = 10;
+    private int PAGE_SIZE = 1000;
     List<Post> posts;
     private LinearLayoutManager layoutManager;
     private boolean isLoading = false;
@@ -81,7 +81,7 @@ public class TopPostsFragment extends BaseFragment implements ITopPostsView {
     @Override public void addPosts(List<Post> posts) {
         for (int i = 0; i < posts.size(); i++) {
             Post post = posts.get(i);
-            if (isNotAlreadyAdded(post) /*&& post.isVisible()*/) {
+            if (isNotAlreadyAdded(post) && post.isVisible()) {
                 this.posts.add(post);
                 shouldFetchMore = true;
             } else {

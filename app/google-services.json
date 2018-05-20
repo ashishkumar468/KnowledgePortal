@@ -104,6 +104,50 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:909076300108:android:92d1256e2b1496c7",
+        "android_client_info": {
+          "package_name": "in.trichash.knowledgeportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909076300108-dcb2ij7u711efhd5p3acqrbtkhqcvq25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.trichash.knowledgeportal",
+            "certificate_hash": "fea88628dffeb7fe1e9f6b077a9c2c0e48938a75"
+          }
+        },
+        {
+          "client_id": "909076300108-7ugl5mq02cjf6bv5rod5he7rr5cfa0ki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx7qYAG6iwmZhvoiQPIP5gigzENu8Gv6g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909076300108-7ugl5mq02cjf6bv5rod5he7rr5cfa0ki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:909076300108:android:c8dcf87fc5c1fdd6",
         "android_client_info": {
           "package_name": "in.trichash.krishnaquotes"

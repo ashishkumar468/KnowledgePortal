@@ -8,11 +8,9 @@ import java.util.TimeZone;
 public class DateUtils {
     public static String getHumaReadableDate(long milliseconds) {
         DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy' 'HH:mm:ss");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(milliseconds);
-        TimeZone tz = TimeZone.getDefault();
-        sdf.setTimeZone(tz);
+        calendar.setTimeZone(TimeZone.getTimeZone("Asia/Calcutta"));
         return sdf.format(calendar.getTime());
     }
 }

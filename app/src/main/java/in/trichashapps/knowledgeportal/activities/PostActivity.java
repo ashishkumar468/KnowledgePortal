@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -18,6 +21,7 @@ import in.trichashapps.knowledgeportal.utils.DateUtils;
 
 public class PostActivity extends BaseActivity {
 
+    @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.tv_title) TextView tvTitle;
     @BindView(R.id.tv_author_name) TextView tvAuthorName;
     @BindView(R.id.tv_post_date) TextView tvPostDate;
@@ -36,6 +40,11 @@ public class PostActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posts);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
+        getSupportActionBar().setTitle("");
         init();
     }
 
@@ -47,8 +56,8 @@ public class PostActivity extends BaseActivity {
     private void showPost() {
         tvTitle.setText(post.getTitle());
         tvAuthorName.setText(post.getAuthorName());
-        tvPostDate.setText(DateUtils.getHumaReadableDate(post.getTimestamp()));
-        tvPostContent.setText(post.getContentText());
+        tvPostDate.setText(DateUtils.getHumaReadableDate(0l - post.getTimestamp()));
+        tvPostContent.setText(Html.fromHtml(post.getContentText()));
 
         if (!TextUtils.isEmpty(post.getImageUrl())) {
             Glide.with(this).load(post.getImageUrl()).into(ivPostImage);
@@ -58,5 +67,12 @@ public class PostActivity extends BaseActivity {
     private void initPost() {
         String postString = getIntent().getStringExtra(Constants.BUNDLE_KEYS.POST);
         post = new Gson().fromJson(postString, Post.class);
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            super.onBackPressed();
+        }
+        return super.onOptionsItemSelected(menuItem);
     }
 }

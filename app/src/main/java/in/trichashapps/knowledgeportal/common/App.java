@@ -45,14 +45,14 @@ public class App extends Application {
         DatabaseReference posts = databaseReference.child("posts");
         /*posts.removeValue();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Post post = new Post();
             post.setId((0 - i));
             post.setImageUrl("as" + i);
             post.setTitle("Ashish" + i);
             post.setAuthorName("Ashish Sinha");
             post.setContentText("Heya a simple post ");
-            post.setTimestamp(System.currentTimeMillis() + (i * 10));
+            post.setTimestamp(-(System.currentTimeMillis() + (i * 10)));
             post.setVisible(false);
             posts.push().setValue(post).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override public void onSuccess(Void aVoid) {

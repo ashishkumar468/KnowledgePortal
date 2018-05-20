@@ -1,79 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
-  <LinearLayout
-      android:id="@+id/ll_container_post"
+  <include layout="@layout/toolbar"/>
+
+  <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_margin="10dp"
-      android:orientation="vertical"
       >
-    <TextView
-        android:id="@+id/tv_title"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Post Title"
-        style="@style/TitleText"
-        />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
+        android:layout_height="match_parent"
+        android:padding="2dp"
+        app:cardElevation="2dp"
         >
-      <ImageView
-          android:id="@+id/iv_author"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
-          android:src="@drawable/ic_author"
-          />
-
-      <TextView
-          android:id="@+id/tv_author_name"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
-          android:layout_toRightOf="@+id/iv_author"
-          android:gravity="center_vertical"
-          tools:text="Author name"
-          style="@style/TitleText"
-          />
-    </RelativeLayout>
-
-
-    <TextView
-        android:id="@+id/tv_post_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
-        tools:text="27/05/2017"
-        />
-
-    <ImageView
-        android:id="@+id/iv_post_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        >
-      <TextView
-          android:id="@+id/tv_post_content"
+      <LinearLayout
+          android:id="@+id/ll_container_post"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          tools:text="Hi I am Ashish"
-          style="@style/Body1Text"
-          />
-    </ScrollView>
+          android:layout_height="match_parent"
+          android:layout_margin="10dp"
+          android:orientation="vertical"
+          >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="Post Title"
+            style="@style/TitleText"
+            />
 
-  </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            >
+          <ImageView
+              android:id="@+id/iv_author"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:src="@drawable/ic_author"
+              />
 
-</ScrollView>
+          <TextView
+              android:id="@+id/tv_author_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@+id/iv_author"
+              android:gravity="center_vertical"
+              android:textAlignment="center"
+              tools:text="Author name"
+              style="@style/TitleText"
+              />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_post_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            tools:text="27/05/2017"
+            style="@style/NormalTitleText"
+            />
+
+        <ImageView
+            android:id="@+id/iv_post_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+          <TextView
+              android:id="@+id/tv_post_content"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingBottom="10dp"
+              tools:text="Hi I am Ashish"
+              style="@style/Body1Text"
+              />
+        </ScrollView>
+
+      </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+  </ScrollView>
+
+</LinearLayout>

@@ -8,7 +8,7 @@ public class Post {
     private String authorName;
     private String numberOfLikes;
     private long timestamp;
-    private boolean isVisible;
+    private boolean visible;
 
     public int getId() {
         return id;
@@ -67,10 +67,10 @@ public class Post {
     }
 
     public boolean isVisible() {
-        return isVisible;
+        return visible;
     }
 
     public void setVisible(boolean visible) {
-        isVisible = visible;
+        this.visible = visible;
     }
 }

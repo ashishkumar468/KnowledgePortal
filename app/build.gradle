@@ -1,21 +1,34 @@
 apply plugin: 'com.android.application'
 
 android {
+  signingConfigs {
+    release {
+      keyAlias 'trichash'
+      keyPassword 'trichash'
+      storeFile file('/Users/ashish.kuma/Downloads/KnowledgePortal/knowledgeportal.jks')
+      storePassword 'trichash'
+    }
+  }
   compileSdkVersion 27
   defaultConfig {
-    applicationId "in.trichashapps.knowledgeportal"
+    applicationId "in.trichash.knowledgeportal"
     minSdkVersion 21
     targetSdkVersion 27
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    signingConfig signingConfigs.release
   }
   buildTypes {
     release {
-      minifyEnabled false
+      minifyEnabled true
+      shrinkResources true
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
+      proguardFile '/Users/ashish.kuma/Downloads/KnowledgePortal/app/proguard-rules.pro'
     }
   }
+  productFlavors {}
 }
 
 dependencies {
